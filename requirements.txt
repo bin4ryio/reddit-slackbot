@@ -1,7 +1,12 @@
 appdirs==1.4.3
 certifi==2017.4.17
 chardet==3.0.3
+click==6.7
+Flask==0.12.2
 idna==2.5
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
 packaging==16.8
 praw==5.1.0
 prawcore==0.10.1
@@ -12,3 +17,4 @@ slackclient==1.0.5
 update-checker==0.16
 urllib3==1.21.1
 websocket-client==0.40.0
+Werkzeug==0.12.2
