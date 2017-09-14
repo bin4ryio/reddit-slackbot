@@ -17,6 +17,8 @@ subreddits = [
   # { 'c': 'reddit', 's': 'technology' },
   # { 'c': 'reddit', 's': 'learnprogramming' },
   # { 'c': 'reddit', 's': 'todayilearned' },
+  { 'c': 'design', 's': 'art' },
+  { 'c': 'design', 's': 'web_design' },
   { 'c': 'funny', 's': 'funny' },
   { 'c': 'funny', 's': 'programmerhumor' },
   { 'c': 'learnprogramming', 's': 'dailyprogrammer' },
