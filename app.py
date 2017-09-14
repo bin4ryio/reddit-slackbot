@@ -2,7 +2,6 @@
 import random
 import os
 import praw
-from time import sleep
 from slackclient import SlackClient
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
@@ -11,6 +10,12 @@ REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
 REDDIT_CLIENT_USER_AGENT = os.getenv('REDDIT_CLIENT_USER_AGENT')
 
 subreddits = [
+#   { 'c': 'reddit', 's': 'funny' },
+#   { 'c': 'reddit', 's': 'dailyprogrammer' },
+#   { 'c': 'reddit', 's': 'hackernews' },
+#   { 'c': 'reddit', 's': 'learnprogramming' },
+#   { 'c': 'reddit', 's': 'todayilearned' },
+# ]
   { 'c': 'funny', 's': 'funny' },
   { 'c': 'learnprogramming', 's': 'dailyprogrammer' },
   { 'c': 'hackernews', 's': 'hackernews' },
@@ -40,7 +45,14 @@ def main():
   if sc.rtm_connect():
 
     for subs in subreddits:
-      sc.rtm_send_message(subs['c'], get_posts(subs['s']))
+      sc.api_call(
+        "chat.postMessage",
+        username="Digibear",
+        channel=subs['c'],
+        text=get_posts(subs['s']),
+        unfurl_links="true"
+      )
+      # sc.rtm_send_message(subs['c'], get_posts(subs['s']))
 
 
 if __name__ == "__main__":
