@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import datetime
 import os
 import praw
 from random import randint
@@ -65,6 +66,7 @@ def getUpdatedLastRead(val):
   return val + 1 if (val + 1) <= len(subreddits) - 1 else 0
 
 def main():
+  '''
   sc = SlackClient(BOT_TOKEN)
   if sc.rtm_connect():
     lastRead = getLastRead()
@@ -82,6 +84,10 @@ def main():
     wr = open('lastRead', 'w')
     wr.write(str(updatedLastRead))
     wr.close()
+
+    '''
+
+    print(datetime.datetime.today())
 
 
 if __name__ == "__main__":
