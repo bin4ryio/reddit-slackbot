@@ -49,20 +49,39 @@ def get_posts(payload):
     print(e)
     pass
 
+def getLastRead():
+  try:
+    f = open('lastRead', 'r')
+    lastRead = f.readline()
+    lastRead = lastRead if len(lastRead) else 0
+    f.close()
+    lastRead = int(lastRead)
+
+  except(FileNotFoundError, ValueError):
+    lastRead = 0
+  return lastRead
+
+def getUpdatedLastRead(val):
+  return val + 1 if (val + 1) <= len(subreddits) - 1 else 0
 
 def main():
   sc = SlackClient(BOT_TOKEN)
   if sc.rtm_connect():
+    lastRead = getLastRead()
+    updatedLastRead = getUpdatedLastRead(lastRead)
 
-    for subs in subreddits:
-      sc.api_call(
-        "chat.postMessage",
-        username="Digibear",
-        channel=subs['c'],
-        text=get_posts(subs['s']),
-        unfurl_links="true"
-      )
-      # sc.rtm_send_message(subs['c'], get_posts(subs['s']))
+    sc.api_call(
+      "chat.postMessage",
+      username="Digibear",
+      channel=subreddits[updatedLastRead]['c'],
+      text=get_posts(subreddits[updatedLastRead]['s']),
+      unfurl_links="true"
+    )
+    # sc.rtm_send_message(subs['c'], get_posts(subs['s']))
+
+    wr = open('lastRead', 'w')
+    wr.write(str(updatedLastRead))
+    wr.close()
 
 
 if __name__ == "__main__":
