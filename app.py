@@ -67,7 +67,6 @@ def getLastRead():
     lastRead = 0
   return lastRead
 
-
 def getUpdatedLastRead(val):
   return val + 1 if (val + 1) <= len(subreddits) - 1 else 0
 
