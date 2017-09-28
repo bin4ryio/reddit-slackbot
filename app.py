@@ -20,17 +20,15 @@ subreddits = [
   {'c': 'reddit', 's': 'technology'},
   {'c': 'reddit', 's': 'ProgrammerTIL'},
   {'c': 'reddit', 's': 'todayilearned'},
-  '''
-  { 'c': 'design', 's': 'art' },
-  { 'c': 'design', 's': 'web_design' },
-  { 'c': 'funny', 's': 'funny' },
-  { 'c': 'funny', 's': 'programmerhumor' },
-  { 'c': 'learnprogramming', 's': 'dailyprogrammer' },
-  { 'c': 'hackernews', 's': 'hackernews' },
-  { 'c': 'hackernews', 's': 'technology' },
-  { 'c': 'learnprogramming', 's': 'ProgrammerTIL' },
-  { 'c': 'todayilearned', 's': 'todayilearned' },
-  '''
+  # { 'c': 'design', 's': 'art' },
+  # { 'c': 'design', 's': 'web_design' },
+  # { 'c': 'funny', 's': 'funny' },
+  # { 'c': 'funny', 's': 'programmerhumor' },
+  # { 'c': 'learnprogramming', 's': 'dailyprogrammer' },
+  # { 'c': 'hackernews', 's': 'hackernews' },
+  # { 'c': 'hackernews', 's': 'technology' },
+  # { 'c': 'learnprogramming', 's': 'ProgrammerTIL' },
+  # { 'c': 'todayilearned', 's': 'todayilearned' },
 ]
 
 
@@ -70,6 +68,7 @@ def getLastRead():
 
 
 def getUpdatedLastRead(val):
+  print(len(subreddits))
   return val + 1 if (val + 1) <= len(subreddits) - 1 else 0
 
 
@@ -80,6 +79,7 @@ def main():
     if sc.rtm_connect():
       lastRead = getLastRead()
       updatedLastRead = getUpdatedLastRead(lastRead)
+      print(updatedLastRead)
 
       sc.api_call(
         "chat.postMessage",
