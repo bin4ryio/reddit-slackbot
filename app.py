@@ -33,7 +33,6 @@ subreddits = [
   {'c': 'reddit', 's': 'art'},
 ]
 
-
 def get_posts(payload):
   r = praw.Reddit(
     client_id=REDDIT_CLIENT_ID,
