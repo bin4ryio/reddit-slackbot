@@ -13,13 +13,6 @@ REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
 REDDIT_CLIENT_USER_AGENT = os.getenv('REDDIT_CLIENT_USER_AGENT')
 
 subreddits = [
-  { 'c': 'reddit', 's': 'funny' },
-  { 'c': 'reddit', 's': 'dailyprogrammer' },
-  { 'c': 'reddit', 's': 'programmerhumor' },
-  { 'c': 'reddit', 's': 'hackernews' },
-  { 'c': 'reddit', 's': 'technology' },
-  { 'c': 'reddit', 's': 'ProgrammerTIL' },
-  { 'c': 'reddit', 's': 'todayilearned' },
   # {'c': 'hackernews', 's': 'hackernews'},
   # {'c': 'funny', 's': 'funny'},
   # {'c': 'design', 's': 'web_design'},
@@ -29,6 +22,13 @@ subreddits = [
   # {'c': 'learnprogramming', 's': 'ProgrammerTIL'},
   # {'c': 'todayilearned', 's': 'todayilearned'},
   # {'c': 'design', 's': 'art'},
+  {'c': 'reddit', 's': 'funny'},
+  {'c': 'reddit', 's': 'dailyprogrammer'},
+  {'c': 'reddit', 's': 'programmerhumor'},
+  {'c': 'reddit', 's': 'hackernews'},
+  {'c': 'reddit', 's': 'technology'},
+  {'c': 'reddit', 's': 'ProgrammerTIL'},
+  {'c': 'reddit', 's': 'todayilearned'},
 ]
 
 
