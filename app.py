@@ -13,8 +13,8 @@ REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
 REDDIT_CLIENT_USER_AGENT = os.getenv('REDDIT_CLIENT_USER_AGENT')
 
 subreddits = [
-  # {'c': 'hackernews', 's': 'hackernews'},
   # {'c': 'funny', 's': 'funny'},
+  # {'c': 'hackernews', 's': 'hackernews'},
   # {'c': 'design', 's': 'web_design'},
   # {'c': 'funny', 's': 'programmerhumor'},
   # {'c': 'learnprogramming', 's': 'dailyprogrammer'},
@@ -74,7 +74,7 @@ def getUpdatedLastRead(val):
 
 def main():
   hour = datetime.datetime.today().hour
-  if (hour >= 2 & hour <= 14) & hour % 2 == 0:
+  if (hour >= 2 & hour <= 14) & hour % 2 != 0:
     sc = SlackClient(BOT_TOKEN)
     if sc.rtm_connect():
       lastRead = getLastRead()
