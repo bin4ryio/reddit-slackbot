@@ -12,6 +12,8 @@ REDDIT_CLIENT_ID = os.getenv('REDDIT_CLIENT_ID')
 REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
 REDDIT_CLIENT_USER_AGENT = os.getenv('REDDIT_CLIENT_USER_AGENT')
 
+// FIXME: File writes do not persist when this script is run inside a scheduler
+
 subreddits = [
   # {'c': 'funny', 's': 'funny'},
   # {'c': 'hackernews', 's': 'hackernews'},
@@ -73,7 +75,7 @@ def getUpdatedLastRead(val):
 
 def main():
   hour = datetime.datetime.today().hour
-  if (hour >= 2 & hour <= 14) & hour % 2 != 0:
+  if (hour >= 2 & hour <= 14) & hour % 2 == 0:
     sc = SlackClient(BOT_TOKEN)
     if sc.rtm_connect():
       lastRead = getLastRead()
