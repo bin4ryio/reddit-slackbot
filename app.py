@@ -73,7 +73,7 @@ def getUpdatedLastRead(val):
 
 def main():
   hour = datetime.datetime.today().hour
-  if (hour >= 2 & hour <= 14) & hour % 2 == 0:
+  if (hour >= 2 & hour <= 14) & hour % 2 != 0:
     sc = SlackClient(BOT_TOKEN)
     if sc.rtm_connect():
       lastRead = getLastRead()
