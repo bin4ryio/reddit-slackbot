@@ -68,7 +68,6 @@ def getLastRead():
 
 
 def getUpdatedLastRead(val):
-  print(len(subreddits))
   return val + 1 if (val + 1) <= len(subreddits) - 1 else 0
 
 
@@ -79,7 +78,6 @@ def main():
     if sc.rtm_connect():
       lastRead = getLastRead()
       updatedLastRead = getUpdatedLastRead(lastRead)
-      print(updatedLastRead)
 
       sc.api_call(
         "chat.postMessage",
@@ -94,7 +92,7 @@ def main():
       wr.write(str(updatedLastRead))
       wr.close()
   else:
-    print('The time is not right!')
+    print('The time is not ripe!')
 
 if __name__ == "__main__":
   main()
