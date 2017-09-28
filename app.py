@@ -29,6 +29,8 @@ subreddits = [
   {'c': 'reddit', 's': 'technology'},
   {'c': 'reddit', 's': 'ProgrammerTIL'},
   {'c': 'reddit', 's': 'todayilearned'},
+  {'c': 'reddit', 's': 'web_design'},
+  {'c': 'reddit', 's': 'art'},
 ]
 
 
